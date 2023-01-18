@@ -1,0 +1,2 @@
+Générer un projet
+Avoir la liste des projets
