@@ -24,4 +24,16 @@ const getAll = (req, res) => {
   })
 }
 
-module.exports = { post, getAll }
+const getOne = (req, res) => {
+  sql = `SELECT projets.projet_description, projets.projet_description_longue, projets.projet_img, equipes.equipe_id, 
+  participants.participant_id FROM projets, equipes, participants 
+  WHERE equipes.equipe_id = projets.equipe_id AND equipes.equipe_id = participants.equipe_id AND projets.projet_id = ?`
+  db.execute(sql, [req.params.id], (err, results) => {
+    if (err) {
+      res.status(400).json(err)
+    }
+    res.status(200).json(results)
+  })
+}
+
+module.exports = { post, getAll, getOne }
