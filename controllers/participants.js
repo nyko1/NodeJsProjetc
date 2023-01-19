@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const db = require('../config/mysqlConn')
 
 let sql
@@ -11,7 +11,7 @@ const getAll = (req, res) => {
     }
     res.status(200).json(results)
   })
-=======
+
 const axios = require('axios').default
 
 const getAll = async (req, res) => {
@@ -30,7 +30,7 @@ const getAll = async (req, res) => {
   } catch (err) {
     res.status(400).json(err)
   }
->>>>>>> 34fee0d6cf0dd70bee30621f3f81d3858b4e0944
+
 }
 
 module.exports = { getAll }
