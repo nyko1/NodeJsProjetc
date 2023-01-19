@@ -1,2 +1,6 @@
-Générer un projet - OK
-Avoir la liste des projets - OK
+TÂCHES TERMINÉES
+- Générer un projet
+- Avoir la liste des projets
+
+
+TÂCHE À FAIRE (vide)
