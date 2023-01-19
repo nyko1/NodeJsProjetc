@@ -1,2 +1,2 @@
-Générer un projet
-Avoir la liste des projets
+Générer un projet - OK
+Avoir la liste des projets - OK
