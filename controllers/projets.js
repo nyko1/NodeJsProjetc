@@ -2,7 +2,7 @@ const db = require('../config/mysqlConn')
 
 let sql
 
-exports.post = (req, res) => {
+const post = (req, res) => {
   const { projet_description, sous_programme_id } = req.body
   sql =
     'INSERT INTO projets (projet_description, sous_programme_id) VALUES (?, ?)'
@@ -14,7 +14,7 @@ exports.post = (req, res) => {
   })
 }
 
-exports.getAll = (req, res) => {
+const getAll = (req, res) => {
   sql = 'SELECT * FROM projets'
   db.query(sql, (err, results) => {
     if (err) {
@@ -23,3 +23,5 @@ exports.getAll = (req, res) => {
     res.status(200).json(results)
   })
 }
+
+module.exports = { post, getAll }
