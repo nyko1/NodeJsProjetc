@@ -36,4 +36,15 @@ const getOne = (req, res) => {
   })
 }
 
-module.exports = { post, getAll, getOne }
+const getByProgram = (req, res) => {
+  sql = `SELECT projet_description, projet_img
+   FROM projets WHERE sous_programme_id = ?`
+  db.execute(sql, [req.params.id], (err, results) => {
+    if (err) {
+      res.status(400).json(err)
+    }
+    res.status(200).json(results)
+  })
+}
+
+module.exports = { post, getAll, getOne, getByProgram }
